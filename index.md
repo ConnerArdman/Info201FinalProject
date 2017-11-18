@@ -2,6 +2,7 @@
 
 Conner Ardman, Hari Kaushik, Tyler Van Brocklin, Molly Donohue
 Group AC3
+
 ---
 ## Project Description
 
