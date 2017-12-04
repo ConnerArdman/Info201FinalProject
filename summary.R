@@ -7,6 +7,7 @@ source("data.R")
 # load libraries
 library(dplyr)
 library(ggplot2)
+library(tidyr)
 
 # how have police shootings changed over time? 
 shootings.by.year <- raw.data %>% select(name, date) %>%
