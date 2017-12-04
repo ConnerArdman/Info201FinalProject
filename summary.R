@@ -1,13 +1,11 @@
 # Summary of all the shooting data
-
 # start by sourcing 
 source("data.R")
 
-
 # load libraries
 library(dplyr)
-library(ggplot2)
 library(tidyr)
+library(plotly)
 
 # how have police shootings changed over time? 
 shootings.by.year <- raw.data %>% select(name, date) %>%
@@ -29,24 +27,27 @@ shootings.by.month <- raw.data %>% select(name, date) %>%
 # where do shootings occur? is that relative to population? 
 shootings.by.state <- raw.data %>% 
   group_by(state) %>% 
-  summarise(totalbystate = n()) %>% 
-  arrange(desc(totalbystate))
+  summarise(total_by_state = n()) %>% 
+  arrange(desc(total_by_state))
 
 # What is the population
 # census data uses full state name
 state.population <- read.csv("census_data.csv", stringsAsFactors = FALSE) %>% 
   filter(NAME == STNAME) %>% 
   select(NAME, POPESTIMATE2016) %>% 
-  rename(full.state.name = NAME)
+  rename(full_state_name = NAME) %>% 
+  rename(pop_estimate_2016 = POPESTIMATE2016)
 
 # expand the state names from the abbreviation so you can join the tables
 x <- shootings.by.state$state
-shootings.by.state$full.state.name <- state.name[match(x, state.abb)]
-pop.and.shooting.data <- left_join(state.population, shootings.by.state, by="full.state.name")
+shootings.by.state$full_state_name <- state.name[match(x, state.abb)]
+pop.and.shooting.data <- left_join(state.population, shootings.by.state, by="full_state_name") %>% 
+  filter(full_state_name != "District of Columbia")
 
-#TODO decide how to evaluate the number of shootings to the relative population
-# show top ten shootings, and top ten populations? ??
-# how can you do that with a visualization though
 #top ten states by pop: CA TX FL NY IL PA OH GA NC MI
 #top ten states by sho: CA TX FL AZ OH CO OK GA NC WA
-  
+plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~full_state_name,type = 'scatter',
+             mode = 'markers', size = ~pop_estimate_2016, color = ~total_by_state, marker=list(opacity=0.5)) %>% 
+  layout(title = 'Shootings By State Proportional To Population',
+         xaxis = list(title = "State Population"), 
+         yaxis = list(title = "Police Shootings since 2015"))
