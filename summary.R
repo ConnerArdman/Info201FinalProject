@@ -7,6 +7,7 @@ source("data.R")
 # load libraries
 library(dplyr)
 library(ggplot2)
+library(tidyr)
 
 # how have police shootings changed over time? 
 shootings.by.year <- raw.data %>% select(name, date) %>%
@@ -45,3 +46,7 @@ pop.and.shooting.data <- left_join(state.population, shootings.by.state, by="ful
 
 #TODO decide how to evaluate the number of shootings to the relative population
 # show top ten shootings, and top ten populations? ??
+# how can you do that with a visualization though
+#top ten states by pop: CA TX FL NY IL PA OH GA NC MI
+#top ten states by sho: CA TX FL AZ OH CO OK GA NC WA
+  
