@@ -4,6 +4,7 @@ library(shiny)
 library(dplyr)
 library(plotly)
 source("summary.R")
+source("body_cam.R")
 
 shinyServer(function(input, output) {
 
@@ -18,6 +19,18 @@ shinyServer(function(input, output) {
     
   })
   
+  output$FleePlotNoBC <- renderPlotly({
+    showFleePlotNoBC()
+  })
+  output$FleePlotBC <- renderPlotly({
+    showFleePlotBC()
+  })
+  output$armedPlotNoBC <- renderPlotly({
+    showArmedPlotNoBC()
+  })
+  output$armedPlotBC <- renderPlotly({
+    showArmedPlotBC()
+  })
   #PUT YOUR SERVER FUNCTIONS HERE
   
 })
