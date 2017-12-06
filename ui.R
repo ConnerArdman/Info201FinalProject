@@ -59,7 +59,49 @@ shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Ma
     )
   ),
   # Hari's
-  tabPanel("Tab Three"
+  tabPanel("Tab Three",
+     sidebarLayout(
+       sidebarPanel(
+         
+         selectInput(inputId = "race",
+                     label = "Race:",
+                     choices = c("Any", "White, non-Hispanic", "Black, non-Hispanic", "Asian", "Native American", "Hispanic", "Other", "Unknown"),
+                     selected = "Any"),
+         
+         selectInput(inputId = "gender",
+                     label = "Sex:",
+                     choices = c("Any", "Male", "Female", "Unknown"),
+                     selected= "Any"),
+         
+         selectInput(inputId = "threat",
+                     label = "Threat level:",
+                     choices = c("Any", "Attacking", "Other", "Undetermined"),
+                     selected= "Any"),
+         
+         selectInput(inputId = "armed",
+                     label = "Armed:",
+                     choices = c("Any", "Firearm", "Other", "Unarmed"),
+                     selected= "Any"),
+         
+         selectInput(inputId = "mental",
+                     label = "Signs of Mental Illness:",
+                     choices = c("Any", "True", "False"),
+                     selected= "Any"),
+         
+         selectInput(inputId = "fleeing",
+                     label = "Was the victim fleeing:",
+                     choices = c("Any", "Yes, in a vehicle", "Yes, on foot", "No", "Unknown"),
+                     selected= "Any")
+         
+         
+         
+       ),
+       
+       mainPanel(
+         
+         plotOutput("shootingPlot")
+       )
+     )
 
   ),
   # Molly's
