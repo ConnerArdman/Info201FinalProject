@@ -8,10 +8,12 @@ shooting.data <- read.csv("data.csv", stringsAsFactors = FALSE)
 bodycam.false <- shooting.data %>% filter(body_camera == "False")
 bodycam.true <- shooting.data %>% filter(body_camera == "True")
 
+
+
 # Percentage of unarmed/armed suspects killed of officers WITH body cameras.
 unarmed.bc.true <- bodycam.true %>% filter(armed == "unarmed")
 unarmed.bc.true.perc <- round(nrow(unarmed.bc.true) / nrow(bodycam.true) * 100)
-armed.bc.true.perc <- round((nrow(bodycam.true) - nrow(unarmed.bc.true)) / nrow(bodycam.true) * 100)
+armed.bc.true.perc <- 100 - unarmed.bc.true.perc
 
 # Plot
 unarmed.bc.true.graph <- plot_ly(bodycam.true, 
@@ -35,6 +37,9 @@ unarmed.bc.false.graph <- plot_ly(bodycam.false,
   layout(title = 'Unarmed Suspects Killed (without bodycams)',
          xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
          yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+
+
 
 # Percentage of fleeing/non fleeing suspects killed of officers WITH body cameras.
 not.flee.bc.true <- bodycam.true %>% filter(flee == "Not fleeing")
