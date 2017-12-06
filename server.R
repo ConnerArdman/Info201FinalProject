@@ -6,6 +6,7 @@ library(plotly)
 source("summary.R")
 source("body_cam.R")
 source("map.R")
+source("distplot.R")
 
 shinyServer(function(input, output) {
 
@@ -31,6 +32,10 @@ shinyServer(function(input, output) {
   })
   output$armedPlotBC <- renderPlotly({
     showArmedPlotBC()
+  })
+  
+  output$shootingPlot <- renderPlotly({
+    showDistPlot(input)
   })
   #PUT YOUR SERVER FUNCTIONS HERE
   
