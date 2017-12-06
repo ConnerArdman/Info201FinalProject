@@ -1,3 +1,7 @@
-.geolayer rect {
+.geolayer rect, g.xy > rect.drag.nsewdrag.cursor-crosshair {
 	fill: #4e5d6c !important;
+}
+
+#FleePlotNoBC div.svg-container:first-child {
+	background: #4e5d6c !important;
 }

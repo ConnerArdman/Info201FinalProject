@@ -11,28 +11,34 @@ library(plotly)
 library(shinythemes)
 
 # Define UI for application that draws a histogram
-shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "tab 1",
+shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Map",
    
   tags$head(
      tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
    ), 
                    
-  tabPanel("tab 1",
-             # Sidebar with a slider input for number of bins 
-             sidebarLayout(
-               sidebarPanel(
-                 radioButtons("county.or.state",
-                              "Breakdown by County or State?",
-                              choiceValues = c("State", "County"),
-                              choiceNames = c("State", "County"))
-               ),
-               
-               # Show a plot of the generated distribution
-               mainPanel(
-                 plotlyOutput("map")
+  tabPanel("Map",
+           # Sidebar with a slider input for number of bins 
+           sidebarLayout(
+             sidebarPanel(
+               radioButtons("county.or.state",
+                            "Choose a Map View:",
+                            choiceValues = c("State", "County"),
+                            choiceNames = c("United States", "Pick A State")),
+               conditionalPanel(
+                 condition = "input['county.or.state'] == 'County'",
+                 textInput("state", "State", "Washington")
+                 
                )
-            )
-          ),
+             ),
+             
+             # Show a plot of the generated distribution
+             mainPanel(
+               plotlyOutput("map")
+             )
+           )
+  ),
+  
   # Tyler's
   tabPanel("Body Cameras",
     h1("Do police act differently when wearing body cameras?"),
