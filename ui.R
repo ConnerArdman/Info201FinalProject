@@ -122,7 +122,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   
   # Tyler
   # Pie charts that display the observed trends related to body cameras from the data.
-  tabPanel("Do Body Camera's Prevent Shootings?",
+  tabPanel("Do Body Cameras Prevent Shootings?",
     fluidRow(
       column(width = 1),
       column(width = 10, h1("Do police act differently when wearing body cameras?"),
@@ -170,6 +170,25 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
         such as frisks or traffic stops.")),
       column(width = 1)
       )),
+  tabPanel("Conclusion",
+           fluidRow(
+             column(width = 10, h1("What does this data suggest for federal legislators?"),
+                    p("Given that the Police Shooting issue is spread across all states, impacts every part of the population, and the initial solution 
+                             of using body cameras on police officers has had little effect thus far, there remains to be a huge improvement."),
+                    p("When body cameras are used, the video recordings belong to the government, 
+                             and they are kept private. Many of the high profile police shootings were high-profile
+                             because a bystander recorded the incident on their phone and posted it online. With body cameras, the recordings will never be viral, 
+                             and the truth of the incident is kept behind red tape. We propose that body cameras continue to be used, but that the data be made public.
+                             
+                             For example, just today, a police officer was convicted for 20 years
+                            in jail for shooting an unarmed, fleeing, black male. 
+                             There was a viral video in this case that demonstrates the police officer was acting out of line with the misbehavior of the victim.
+                             We need more videos like this, and more police officers to be punished based on body camera footage. "),
+                    a("More about the Walter Scott case", href= "https://www.npr.org/sections/thetwo-way/2017/12/07/569070544/former-s-c-officer-who-killed-walter-scott-will-be-sentenced-to-up-to-24-years?sc=tw"),
+                    p("Another point we could suggest is that more data should be collected on whether the body camera was turned on or off."),
+                    a("Studies suggest whether or not a police can turn off the camera effects how they act", href="https://news.vice.com/article/reports-suggest-body-cameras-are-only-effective-when-cops-cant-turn-them-off"),
+                    p("Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings. And we hope that legistlators will act quickly to come to a solution in this matter.")
+  ))),
   
   # Footer
   br(),

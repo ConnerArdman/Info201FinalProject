@@ -13,16 +13,11 @@ shootings.by.year <- raw.data %>% select(name, date) %>%
   separate(date, c("year", "month", "day")) %>% 
   group_by(year) %>% 
   summarise(peryear = n())
-#this plot is not that interesting, there's a gradual decline since 2015
-#plot(shootings.by.year$year, shootings.by.year$peryear)
 
 shootings.by.month <- raw.data %>% select(name, date) %>%
   separate(date, c("year", "month", "day")) %>% 
   group_by(month) %>% 
   summarise(permonth = n())
-#this plot is also boring, it just shows there are less shootings in decemeber on avrage
-#but also the data set is missing 2017 dec data because the month just started
-#plot(shootings.by.month$month, shootings.by.month$permonth)
 
 
 # where do shootings occur? is that relative to population? 
@@ -47,13 +42,15 @@ pop.and.shooting.data <- left_join(state.population, shootings.by.state, by="ful
 
 #top ten states by pop: CA TX FL NY IL PA OH GA NC MI
 #top ten states by sho: CA TX FL AZ OH CO OK GA NC WA
+# Return a plot showing the proportional state shootings 
+
 showStateProportion <- function() {
   titlefont <- list(color = "white")
   plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~paste(full_state_name, "", paste0("Population: ", pop_estimate_2016), paste0("Police Shootings: ", total_by_state), sep="</br>"), hoverinfo="text", type = 'scatter',
                mode = 'markers', size = ~pop_estimate_2016, color = ~total_by_state, marker=list(opacity=0.5), colors = brewer.pal(6, "Paired")) %>% 
     layout(title = 'Shootings By State Proportional To Population', titlefont = titlefont,  margin = list(t = "110", b = "70", l = "80"),
-           xaxis = list(title = "State Population",titlefont = titlefont, zerolinecolor="000", showgrid = FALSE, showticklabels = TRUE, tickfont = titlefont, tickcolor = "white"), 
-           yaxis = list(title = "Police Shootings Since 2015", titlefont = titlefont, zerolinecolor="000", showgrid = FALSE, showticklabels = TRUE, tickfont = titlefont, tickcolor = "white"), 
+           xaxis = list(title = "State Population",titlefont = titlefont, zerolinecolor="fff", showgrid = FALSE, showticklabels = TRUE, tickfont = titlefont, tickcolor = "white"), 
+           yaxis = list(title = "Police Shootings Since 2015", titlefont = titlefont, zerolinecolor="fff", showgrid = FALSE, showticklabels = TRUE, tickfont = titlefont, tickcolor = "white"), 
            paper_bgcolor = "#4e5d6c") %>% colorbar(tickfont = titlefont, tickcolor = "white", titlefont = titlefont, title = "Total Police Shootings")
 }
 
