@@ -56,7 +56,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   ),  
   
   # Hari
-  tabPanel("Who were the victims?",
+  tabPanel("Who Were The Victims?",
            sidebarLayout(
              sidebarPanel(
                
