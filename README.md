@@ -61,5 +61,5 @@ When body cameras are used, the video recordings belong to the government, and t
 
 For example, just today, a police officer was convicted for 20 years in jail for shooting an unarmed, fleeing, black male. There was a viral video in this case that demonstrates the police officer was acting out of line with the misbehavior of the victim. We need more videos like this, and more police officers to be punished based on body camera footage. 
 
---
+---
 Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings, and we hope that legistlators will act quickly to come to a solution in this matter.
