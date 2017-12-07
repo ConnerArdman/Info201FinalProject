@@ -164,13 +164,15 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
       column(width = 1)
     ),
     fluidRow(
-      column(width = 1),
-      column(width = 10, h1("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
+      column(width = 1),br(),
+      column(width = 10, div(h1("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
         conclude that police officer's use of body cameras has little to no recognizable effect on the conditions
         a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
-        such as frisks or traffic stops.")),
+        such as frisks or traffic stops."),style = "background-color:#4e5d6c; padding:10px")),
       column(width = 1)
-      )),
+      )
+    ),
+  
   tabPanel("Conclusion",
            fluidRow(
              column(width = 10, h1("What does this data suggest for federal legislators?"),
@@ -190,18 +192,6 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                     a("Studies suggest whether or not a police can turn off the camera effects how they act", href="https://news.vice.com/article/reports-suggest-body-cameras-are-only-effective-when-cops-cant-turn-them-off"),
                     p("Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings. And we hope that legistlators will act quickly to come to a solution in this matter.")
   ))),
-    fluidRow(align="center",
-      column(width = 1),br(),
-      column(width = 10,
-             div(h1("Conclusion:"),
-                 p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
-                   conclude that police officer's use of body cameras has little to no recognizable effect on the conditions
-                   a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
-                   such as frisks or traffic stops."),  
-                   style = "background-color:#4e5d6c; padding:10px")
-            )
-  ),
-
   
   # Footer
   br(),
