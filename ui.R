@@ -162,9 +162,9 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
         h5("Police with body cameras"),
         width = 5, plotlyOutput("armedPlotBC")),
       column(width = 1)
-    ),
+    ), br(),
     fluidRow(
-      column(width = 1),br(),
+      column(width = 1),
       column(width = 10, div(h1("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
         conclude that police officer's use of body cameras has little to no recognizable effect on the conditions
         a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
