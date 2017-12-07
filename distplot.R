@@ -83,6 +83,6 @@ showDistPlot <- function(input) {
                        color = ~race, text = ~paste(date, paste0(city, ", ", state), paste0(name), age,
                                                     sep = "<br />"), hoverinfo = "text") %>%
     layout(title = 'Police shooting incidents since January 1st, 2015', margin = list(t = "110"),
-           xaxis = list(title = 'Date', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-           yaxis = list(title = 'Age', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+           xaxis = list(title = 'Date', zeroline = FALSE, showticklabels = FALSE),
+           yaxis = list(title = 'Age', zeroline = FALSE, showticklabels = FALSE))
 }
