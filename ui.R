@@ -18,7 +18,9 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
      tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
    ), 
   
-  # Conner and Molly         
+  # Conner and Molly
+  # Interactive map of nation and individual states and scatterplot plotting each statses total shootings vs.
+  # state population.
   tabPanel("Where Do Shootings Occur?",
            sidebarLayout(
              sidebarPanel(
@@ -56,6 +58,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   ),  
   
   # Hari
+  # Visualization of the data set. Each marker represents a person who was killed.
   tabPanel("Who Were The Victims?",
            sidebarLayout(
              sidebarPanel(
@@ -100,6 +103,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   ),
   
   # Tyler
+  # Pie charts that display the observed trends related to body cameras from the data.
   tabPanel("Do Body Camera's Prevent Shootings?",
     fluidRow(
       column(width = 2),
