@@ -116,7 +116,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
       column(width = 1)),
     fluidRow(
       column(width = 1),
-      column(width = 10, h4("Suspects shot that weren't fleeing:")),
+      column(width = 10, h3("Suspects shot that weren't fleeing:")),
       column(width = 1)
     ),
     fluidRow(
@@ -128,10 +128,10 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
         h5("Police with body cameras"),
         width = 5, plotlyOutput("FleePlotBC")),
       column(width = 1)
-    ),
+    ),br(),
     fluidRow(
       column(width = 1),
-      column(width = 10, h4("Unarmed suspects who were still shot:")),
+      column(width = 10, h3("Unarmed suspects who were still shot:")),
       column(width = 1)
     ),
     fluidRow(
@@ -146,7 +146,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
     ),
     fluidRow(
       column(width = 1),
-      column(width = 10, h4("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
+      column(width = 10, h1("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
         conclude that police officer's use of body cameras has little to no recognizable effect on the conditions
         a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
         such as frisks or traffic stops.")),
