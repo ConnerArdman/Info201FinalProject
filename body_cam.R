@@ -4,6 +4,7 @@ library(plotly)
 
 shooting.data <- read.csv("data.csv", stringsAsFactors = FALSE)
 
+# Count how many shootings are in the dataset.
 total.shootings <- nrow(shooting.data)
 
 # Seperating data based off whether officer had bodycam

@@ -98,8 +98,21 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
              mainPanel(
                plotlyOutput("shootingPlot")
              )
+           ),
+           fluidRow(
+             column(width = 1),
+             column(width = 10,
+                    h2("Conclusion")
+                    ),
+             column(width = 1)
+           ),
+           fluidRow(
+             column(width = 1),
+             column(width = 10,
+                    p("In conclusion, ")
+             ),
+             column(width = 1)
            )
-           
   ),
   
   # Tyler
