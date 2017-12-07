@@ -11,7 +11,7 @@ library(plotly)
 library(shinythemes)
 
 # Define UI for application that draws a histogram
-shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Map",
+shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected = "Map",
    
   tags$head(
      tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
@@ -28,7 +28,8 @@ shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Ma
                conditionalPanel(
                  condition = "input['county.or.state'] == 'County'",
                  textInput("state", "State", "Washington"),
-                 checkboxInput("per", "Show Data Per 100,000 People", TRUE)
+                 checkboxInput("per", "Show Data Per 100,000 People", TRUE),
+                 p("Note: May exclude some small counties")
                ),
                conditionalPanel(
                  condition = "input['county.or.state'] == 'State'",
@@ -111,14 +112,11 @@ shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Ma
                      label = "Was the victim fleeing:",
                      choices = c("Any", "Yes, in a vehicle", "Yes, on foot", "No", "Unknown"),
                      selected= "Any")
-         
-         
-         
+
        ),
        
        mainPanel(
-         
-         plotOutput("shootingPlot")
+         plotlyOutput("shootingPlot")
        )
      )
 

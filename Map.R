@@ -10,7 +10,7 @@ showCounty <- function(state, per) {
   city.counts <- raw.data %>% group_by(city, state) %>% summarize(count = n())
   
   city.lat.long <- read.csv('uscitiesv1.3.csv', stringsAsFactors = FALSE)
-  # NOTE this is excluding about 300 rows that don't match the city database. 
+  # NOTE this is excluding some rows that don't match the city database. 
   # These are mostly very small towns
   city <- inner_join(city.counts, city.lat.long, by = c("city" = "city", "state" = "state_id"))
   
@@ -38,17 +38,16 @@ showCounty <- function(state, per) {
   
   county.data %>%
     group_by(group) %>%
-    plot_ly(x = ~long, y = ~lat, color = ~colorcat, colors = "Reds"
-            
-    )  %>%
-    add_polygons(line = list(width = 0.4)) %>%
+    plot_ly(x = ~long, y = ~lat, color = ~colorcat, colors = "Reds")  %>% 
+    add_polygons(line = list(width = 0.4)) %>% 
     add_polygons(
       fillcolor = 'transparent',
       line = list(color = 'black', width = 0.5),
       showlegend = FALSE
-    ) %>%  add_trace(type = "scatter", opacity = 0, mode = "markers",
-                     text = ~paste0(gsub("(?<=\\b)([a-z])", "\\U\\1", subregion, perl=TRUE),
-                                    "\n","Shootings: ", count, "\nPer 100,000: ", round(adjusted)), hoverinfo = "text") %>%
+    ) %>%
+    add_trace(type = "scatter", opacity = 0, mode = "markers",
+              text = ~paste0(gsub("(?<=\\b)([a-z])", "\\U\\1", subregion, perl=TRUE),
+                             "\n","Shootings: ", count, "\nPer 100,000: ", round(adjusted)), hoverinfo = "text") %>%
     layout(autosize = F,
            title = title, paper_bgcolor = "#4e5d6c", titlefont = titlefont, margin = list(t = "110"),    
            xaxis = list(title = "", showgrid = FALSE,
