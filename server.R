@@ -1,5 +1,3 @@
-# Conner Ardman
-
 library(shiny)
 library(dplyr)
 library(plotly)

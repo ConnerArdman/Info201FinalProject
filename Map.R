@@ -1,8 +1,6 @@
 library(dplyr)
 library(plotly)
 
-#TODO: , colorbar for counties, conclusion info
-
 # Create a map of the shootings in each county of a given state. 
 # If Per is TRUE then use the data per 100,000 people
 showCounty <- function(state, per) {
@@ -83,10 +81,3 @@ showState <- function(mill) {
     layout(title = 'Police Shootings Per Million People', geo = g, autosize = F,
            paper_bgcolor = "#4e5d6c", titlefont = titlefont, margin = list(t = "110"))    
 }
-
-
-
-
-
-
-
