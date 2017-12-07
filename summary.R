@@ -49,7 +49,7 @@ pop.and.shooting.data <- left_join(state.population, shootings.by.state, by="ful
 #top ten states by sho: CA TX FL AZ OH CO OK GA NC WA
 showStateProportion <- function() {
   titlefont <- list(color = "white")
-  plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~full_state_name, hoverinfo="text", type = 'scatter',
+  plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~paste(full_state_name, "", paste0("Population: ", pop_estimate_2016), paste0("Police Shootings: ", total_by_state), sep="</br>"), hoverinfo="text", type = 'scatter',
                mode = 'markers', size = ~pop_estimate_2016, color = ~total_by_state, marker=list(opacity=0.5), colors = brewer.pal(6, "Paired")) %>% 
     layout(title = 'Shootings By State Proportional To Population', titlefont = titlefont, tickfont = titlefont, tickcolor = "white",
            xaxis = list(title = "State Population",titlefont = titlefont, zerolinecolor="fff", showgrid = FALSE, showticklabels = FALSE), 
