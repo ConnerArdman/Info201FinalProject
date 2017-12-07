@@ -163,7 +163,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
         width = 5, plotlyOutput("armedPlotBC")),
       column(width = 1)
     ),
-    fluidRow(align="center",
+    fluidRow(
       column(width = 1),br(),
       column(width = 10,
              div(h1("Conclusion:"),
