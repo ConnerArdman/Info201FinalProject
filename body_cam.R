@@ -4,9 +4,13 @@ library(plotly)
 
 shooting.data <- read.csv("data.csv", stringsAsFactors = FALSE)
 
+total.shootings <- nrow(shooting.data)
+
 # Seperating data based off whether officer had bodycam
 bodycam.false <- shooting.data %>% filter(body_camera == "False")
+total.non.bc.shootings <- nrow(bodycam.false)
 bodycam.true <- shooting.data %>% filter(body_camera == "True")
+total.bc.shootings <- nrow(bodycam.true)
 
 
 
@@ -56,7 +60,7 @@ flee.bc.true.perc <- (100 - not.flee.bc.true.perc)
 # Plot
 showFleePlotBC <- function() {
   flee.bc.true.plot <- plot_ly(bodycam.true, 
-                               labels = ~c("Didn't Flee", "Fleed"), 
+                               labels = ~c("Didn't Flee", "Fled"), 
                                values = ~c(not.flee.bc.true.perc, flee.bc.true.perc), 
                                type = 'pie') %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
@@ -71,7 +75,7 @@ flee.bc.false.perc <- (100 - not.flee.bc.false.perc)
 # Plot
 showFleePlotNoBC <- function() {
   flee.bc.false.plot <- plot_ly(bodycam.false, 
-                                labels = ~c("Didn't Flee", "Fleed"), 
+                                labels = ~c("Didn't Flee", "Fled"), 
                                 values = ~c(not.flee.bc.false.perc, flee.bc.false.perc), 
                                 type = 'pie') %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
