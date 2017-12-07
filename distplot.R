@@ -1,11 +1,13 @@
-
 library(dplyr)
 library(plotly)
 source("data.R")
 
+# Create a plot of each shooting based on given input.
+# NOTE: Some data points are ommitted based on missing information
 showDistPlot <- function(input) {
   is.na(raw.data) <- raw.data==''
   
+  # Filter by the given race
   if(input$race == "White, non-Hispanic") {
     plot.data <- raw.data %>% filter(race == "W")
   } else if (input$race == "Black, non-Hispanic") {
@@ -22,6 +24,7 @@ showDistPlot <- function(input) {
     plot.data <- raw.data
   }
   
+  # Filter by the given gender
   if(input$gender == "Male") {
     plot.data <- plot.data %>% filter(gender == "M")
   } else if (input$gender == "Female") {
@@ -32,6 +35,7 @@ showDistPlot <- function(input) {
     plot.data <- plot.data
   }
   
+  # Filter by whether or not the person shot was threatening the police officer
   if(input$threat == "Attacking") {
     plot.data <- plot.data %>% filter(threat_level == "attack")
   } else if (input$threat == "Other") {
@@ -42,6 +46,7 @@ showDistPlot <- function(input) {
     plot.data <- plot.data
   }
   
+  # Filter by whether or not the person shot was armed
   if(input$armed == "Firearm") {
     plot.data <- plot.data %>% filter(armed == "gun")
   } else if (input$armed == "Other") {
@@ -52,6 +57,7 @@ showDistPlot <- function(input) {
     plot.data <- plot.data
   }
   
+  # Filter by whether or not the person shot was fleeing
   if(input$fleeing == "Yes, on foot") {
     plot.data <- plot.data %>% filter(flee == "Foot")
   } else if (input$fleeing == "Yes, in a vehicle") {
@@ -62,6 +68,7 @@ showDistPlot <- function(input) {
     plot.data <- plot.data
   }
   
+  # Filter by whether or not the person shot had a mental illness
   if(input$mental == "True") {
     plot.data <- plot.data %>% filter(signs_of_mental_illness == "True")
   } else if (input$mental == "False") {
@@ -70,6 +77,7 @@ showDistPlot <- function(input) {
     plot.data <- plot.data
   }
   
+  # Create the plot
   plot.data$age <- sub("^$", 0, plot.data$age)
   dist.plot <- plot_ly(plot.data, x = ~date, y = ~age, type = 'scatter', mode = 'markers',
                        color = ~race, text = ~paste(date, paste0(city, ", ", state), paste0(name), age,

@@ -6,7 +6,7 @@ library(plotly)
 showCounty <- function(state, per) {
   state.lower <- tolower(state)
   city.counts <- raw.data %>% group_by(city, state) %>% 
-    summarize(count = n())
+                 summarize(count = n())
   
   city.lat.long <- read.csv('uscitiesv1.3.csv', stringsAsFactors = FALSE)
   
@@ -52,8 +52,8 @@ showCounty <- function(state, per) {
                              round(adjusted)), hoverinfo = "text") %>%
     layout(autosize = F, title = title, paper_bgcolor = "#4e5d6c", titlefont = titlefont, 
            margin = list(t = "110"), xaxis = list(title = "", showgrid = FALSE,
-                                                  zeroline = FALSE, showticklabels = FALSE), yaxis = list(title = "", showgrid = FALSE,
-                                                                                                          zeroline = FALSE, showticklabels = FALSE), showlegend = FALSE)
+           zeroline = FALSE, showticklabels = FALSE), yaxis = list(title = "", showgrid = FALSE,
+           zeroline = FALSE, showticklabels = FALSE), showlegend = FALSE)
 }
 
 
