@@ -35,9 +35,15 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                conditionalPanel(
                  condition = "input['county.or.state'] == 'State'",
                  checkboxInput("mill", "Show Data Per 1,000,000 People", TRUE)
-               ),br(),
-               h1("Conclusions:"),
-               p("Looking at these maps and the relatively linear pattern to the graph, we have conclude
+               ),br(),hr(),
+               h1("Project Introduction:"),
+               p("The purpose of this project is to determine the scope of police shootings (an officer shooting a civilian)
+                 in the United States, determine the effectiveness of current solutions (bodycameras), and hopefully
+                 provide insight into how a better solution could be devised."), 
+               a("More information about this project and the dataset can be found here", href= "https://github.com/ConnerArdman/Info201FinalProject"),
+               br(),hr(),
+               h1("Initial Conclusion:"),
+               p("Looking at these maps and the relatively linear pattern to the graph, we have concluded
                  that this issue is spread significantly across all of the states.")
              ), 
                   
@@ -141,7 +147,10 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
         a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
         such as frisks or traffic stops.")),
       column(width = 2)
-      ))
+      )),
+  br(),
+  hr(),
+  p("Conner Ardman, Hari Kaushik, Tyler Van Brocklin, Molly Donohue")
   )
 )
 
