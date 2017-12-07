@@ -131,7 +131,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
       column(width = 1)),
     fluidRow(
       column(width = 1),
-      column(width = 10, h3("Suspects shot that weren't fleeing:")),
+      column(width = 10, h3("Proportion of Suspects Shot That Were Fleeing:")),
       column(width = 1)
     ),
     fluidRow(
@@ -146,7 +146,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
     ),br(),
     fluidRow(
       column(width = 1),
-      column(width = 10, h3("Unarmed suspects who were still shot:")),
+      column(width = 10, h3("Proportion of Suspects Shot That Were Armed:")),
       column(width = 1)
     ),
     fluidRow(
