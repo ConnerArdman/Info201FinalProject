@@ -4,6 +4,8 @@ library(plotly)
 source("data.R")
 
 showDistPlot <- function(input) {
+  is.na(raw.data) <- raw.data==''
+  
   if(input$race == "White, non-Hispanic") {
     plot.data <- raw.data %>% filter(race == "W")
   } else if (input$race == "Black, non-Hispanic") {
@@ -15,7 +17,7 @@ showDistPlot <- function(input) {
   } else if (input$race == "Hispanic") {
     plot.data <- raw.data %>% filter(race == "H")
   } else if (input$race == "Other") {
-    plot.data <- raw.data %>% filter(race != "W", race != "B", race != "A", race != "N", race != "H")
+    plot.data <- raw.data %>% filter(race == "O")
   } else {
     plot.data <- raw.data
   }
@@ -50,12 +52,12 @@ showDistPlot <- function(input) {
     plot.data <- plot.data
   }
   
-  if(input$fleeing == "No") {
-    plot.data <- plot.data %>% filter(flee == "Not fleeing")
-  } else if (input$armed == "Yes, on foot") {
+  if(input$fleeing == "Yes, on foot") {
     plot.data <- plot.data %>% filter(flee == "Foot")
-  } else if (input$armed == "Yes, in a vehicle") {
+  } else if (input$fleeing == "Yes, in a vehicle") {
     plot.data <- plot.data %>% filter(flee == "Car")
+  } else if (input$fleeing == "No") {
+    plot.data <- plot.data %>% filter(flee == "Not fleeing")
   } else {
     plot.data <- plot.data
   }
@@ -69,13 +71,10 @@ showDistPlot <- function(input) {
   }
   
   plot.data$age <- sub("^$", 0, plot.data$age)
-  dist.plot <- plot_ly(plot.data, x = ~id/2, y = ~age, type = 'scatter', mode = 'markers', 
-                       text = ~paste(date, paste0(city, ", ", state), paste0(name), 
-                                     sep = "<br />"), hoverinfo = "text") %>%
+  dist.plot <- plot_ly(plot.data, x = ~date, y = ~age, type = 'scatter', mode = 'markers',
+                       color = ~race, text = ~paste(date, paste0(city, ", ", state), paste0(name), age,
+                                                    sep = "<br />"), hoverinfo = "text") %>%
     layout(title = 'Police shooting incidents since January 1st, 2015',
-           xaxis = list(title = '', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-           yaxis = list(title = 'Age'))
-  
-  #dist.plot <- ggplot(plot.data, aes(x=id, y=age, color=factor(race))) + geom_point() + theme(axis.text.x=element_blank()) + 
-   # labs(x = "", y = age, color = "Race")
+           xaxis = list(title = 'Date', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+           yaxis = list(title = 'Age', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
 }

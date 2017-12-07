@@ -126,7 +126,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
          
          selectInput(inputId = "fleeing",
                      label = "Was the victim fleeing:",
-                     choices = c("Any", "Yes, in a vehicle", "Yes, on foot", "No", "Unknown"),
+                     choices = c("Any", "Yes, in a vehicle", "Yes, on foot", "No"),
                      selected= "Any")
 
        ),
