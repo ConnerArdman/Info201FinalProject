@@ -14,7 +14,7 @@ We are working with a data set pertaining to police shootings of civilians (wher
 
 The raw data can be accessed from this [link.](https://github.com/washingtonpost/data-police-shootings/blob/master/fatal-police-shootings-data.csv)
 
-We are also using United States Census data to get the populations of every town. This data is collected by the government to have an understanding of the population of the United States. This information will help us better understand the impact that police shootings are having on different communities (i.e.shootings per capita). This data comes from [here.](https://www.census.gov/data/datasets/2016/demo/popest/total-cities-and-towns.html)
+We are also using United States Census data to get the populations of every town. This data is collected by the government to have an understanding of the population of the United States. This information will help us better understand the impact that police shootings are having on different communities (i.e.shootings per capita). This data comes from [here.](https://www.census.gov/data/datasets/2016/demo/popest/total-cities-and-towns.html) Less than 1% of the data was omitted due to incomplete observations.
 
 ### Target Audience
 
@@ -60,7 +60,7 @@ Given that the Police Shooting issue is spread across all states, impacts every 
 
 When body cameras are used, the video recordings belong to the government, and they are kept private. Many of the high profile police shootings were high-profile because a bystander recorded the incident on their phone and posted it online. With body cameras, the recordings will never be viral, and the truth of the incident is kept behind red tape. We propose that body cameras continue to be used, but that the data be made public.
 
-For example, just today, a police officer was convicted for 20 years in jail for shooting an unarmed, fleeing, black male. There was a viral video in this case that demonstrates the police officer was acting out of line with the misbehavior of the victim. We need more videos like this, and more police officers to be punished based on body camera footage. 
+For example, just today, a police officer was convicted for 20 years in jail for shooting an unarmed, fleeing, black male. There was a viral video in this case that demonstrates the police officer was acting out of line with the misbehavior of the victim. We need more videos like this, and more police officers to be punished based on body camera footage.
 
 ---
-Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings, and we hope that legistlators will act quickly to come to a solution in this matter.
+Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings, and we hope that legislators will act quickly to come to a solution in this matter.
