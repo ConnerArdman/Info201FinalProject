@@ -69,13 +69,13 @@ showDistPlot <- function(input) {
   }
   
   plot.data$age <- sub("^$", 0, plot.data$age)
-  #dist.plot <- plot_ly(plot.data, x = ~id/2, y = ~age, type = 'scatter', mode = 'markers', 
-  #                     text = ~paste(date, paste0(city, ", ", state), paste0(name), 
-  #                                   sep = "<br />"), hoverinfo = "text") %>%
-   # layout(title = 'Police shooting incidents since January 1st, 2015',
-   #        xaxis = list(title = '', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-   #        yaxis = list(title = 'Age'))
+  dist.plot <- plot_ly(plot.data, x = ~id/2, y = ~age, type = 'scatter', mode = 'markers', 
+                       text = ~paste(date, paste0(city, ", ", state), paste0(name), 
+                                     sep = "<br />"), hoverinfo = "text") %>%
+    layout(title = 'Police shooting incidents since January 1st, 2015',
+           xaxis = list(title = '', showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+           yaxis = list(title = 'Age'))
   
-  dist.plot <- ggplot(plot.data, aes(x=id, y=age, color=factor(race))) + geom_point() + theme(axis.text.x=element_blank()) + 
-    labs(x = "", y = age, color = "Race")
+  #dist.plot <- ggplot(plot.data, aes(x=id, y=age, color=factor(race))) + geom_point() + theme(axis.text.x=element_blank()) + 
+   # labs(x = "", y = age, color = "Race")
 }
