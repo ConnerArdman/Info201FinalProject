@@ -9,7 +9,6 @@
 library(shiny)
 library(plotly)
 library(shinythemes)
-source("body_cam.R")
 
 # Define UI for application that draws a histogram
 shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Map",
