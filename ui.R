@@ -148,6 +148,8 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
         such as frisks or traffic stops.")),
       column(width = 2)
       )),
+  
+  # Footer
   br(),
   hr(),
   p("Conner Ardman, Hari Kaushik, Tyler Van Brocklin, Molly Donohue")

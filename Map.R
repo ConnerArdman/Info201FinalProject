@@ -6,12 +6,12 @@ library(plotly)
 showCounty <- function(state, per) {
   state.lower <- tolower(state)
   city.counts <- raw.data %>% group_by(city, state) %>% 
-    summarize(count = n())
+                 summarize(count = n())
   
   city.lat.long <- read.csv('uscitiesv1.3.csv', stringsAsFactors = FALSE)
   
   # NOTE this is excluding some rows that don't match the city database. 
-  # These are mostly very small towns
+  # These are mostly very small towns.
   city <- inner_join(city.counts, city.lat.long, by = c("city" = "city", "state" = "state_id"))
   
   county <- city %>% group_by(county_name, state_name) %>%

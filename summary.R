@@ -51,9 +51,9 @@ showStateProportion <- function() {
   titlefont <- list(color = "white")
   plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~paste(full_state_name, "", paste0("Population: ", pop_estimate_2016), paste0("Police Shootings: ", total_by_state), sep="</br>"), hoverinfo="text", type = 'scatter',
                mode = 'markers', size = ~pop_estimate_2016, color = ~total_by_state, marker=list(opacity=0.5), colors = brewer.pal(6, "Paired")) %>% 
-    layout(title = 'Shootings By State Proportional To Population', titlefont = titlefont, tickfont = titlefont, tickcolor = "white",  margin = list(t = "110"),
-           xaxis = list(title = "State Population",titlefont = titlefont, zerolinecolor="000", showgrid = FALSE, showticklabels = TRUE), 
-           yaxis = list(title = "Police Shootings since 2015", titlefont = titlefont, zerolinecolor="000", showgrid = FALSE, showticklabels = TRUE), 
-           paper_bgcolor = "#4e5d6c")
+    layout(title = 'Shootings By State Proportional To Population', titlefont = titlefont,  margin = list(t = "110", b = "70", l = "80"),
+           xaxis = list(title = "State Population",titlefont = titlefont, zerolinecolor="000", showgrid = FALSE, showticklabels = TRUE, tickfont = titlefont, tickcolor = "white"), 
+           yaxis = list(title = "Police Shootings Since 2015", titlefont = titlefont, zerolinecolor="000", showgrid = FALSE, showticklabels = TRUE, tickfont = titlefont, tickcolor = "white"), 
+           paper_bgcolor = "#4e5d6c") %>% colorbar(tickfont = titlefont, tickcolor = "white", titlefont = titlefont, title = "Total Police Shootings")
 }
 
