@@ -54,8 +54,8 @@ showCounty <- function(state, per) {
                              round(adjusted)), hoverinfo = "text") %>%
     layout(autosize = F, title = title, paper_bgcolor = "#4e5d6c", titlefont = titlefont, 
            margin = list(t = "110"), xaxis = list(title = "", showgrid = FALSE,
-                                                  zeroline = FALSE, showticklabels = FALSE), yaxis = list(title = "", showgrid = FALSE,
-                                                                                                          zeroline = FALSE, showticklabels = FALSE), showlegend = FALSE)
+           zeroline = FALSE, showticklabels = FALSE), yaxis = list(title = "", showgrid = FALSE,
+           zeroline = FALSE, showticklabels = FALSE), showlegend = FALSE)
 }
 
 
