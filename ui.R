@@ -59,7 +59,7 @@ shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Ma
     )
   ),
   # Hari's
-  tabPanel("Tab Three",
+  tabPanel("Who were the victims?",
      sidebarLayout(
        sidebarPanel(
          
