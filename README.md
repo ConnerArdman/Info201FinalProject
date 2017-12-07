@@ -5,6 +5,7 @@ Conner Ardman, Hari Kaushik, Tyler Van Brocklin, Molly Donohue
 Group AC3
 
 [Project Proposal](proposal.md)
+[Project Running On Shiny](https://mollyd.shinyapps.io/Info201FinalProject/)
 
 ---
 ## Project Description
