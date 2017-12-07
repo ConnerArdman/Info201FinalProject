@@ -37,6 +37,9 @@ shinyServer(function(input, output) {
   output$shootingPlot <- renderPlotly({
     showDistPlot(input)
   })
-  #PUT YOUR SERVER FUNCTIONS HERE
+
+  output$statePlot <- renderPlotly({
+    showStateProportion()
+  })
   
 })

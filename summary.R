@@ -46,8 +46,13 @@ pop.and.shooting.data <- left_join(state.population, shootings.by.state, by="ful
 
 #top ten states by pop: CA TX FL NY IL PA OH GA NC MI
 #top ten states by sho: CA TX FL AZ OH CO OK GA NC WA
-plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~full_state_name,type = 'scatter',
-             mode = 'markers', size = ~pop_estimate_2016, color = ~total_by_state, marker=list(opacity=0.5)) %>% 
-  layout(title = 'Shootings By State Proportional To Population',
-         xaxis = list(title = "State Population"), 
-         yaxis = list(title = "Police Shootings since 2015"))
+showStateProportion <- function() {
+  titlefont <- list(color = "white")
+  plot_ly(data = pop.and.shooting.data, x = ~pop_estimate_2016, y = ~total_by_state, text = ~full_state_name,type = 'scatter',
+               mode = 'markers', size = ~pop_estimate_2016, color = ~total_by_state, marker=list(opacity=0.5)) %>% 
+    layout(title = 'Shootings By State Proportional To Population', titlefont = titlefont, tickfont = titlefont, tickcolor = "white",
+           xaxis = list(title = "State Population",titlefont = titlefont, zerolinecolor="fff", showgrid = FALSE, showticklabels = FALSE), 
+           yaxis = list(title = "Police Shootings since 2015", titlefont = titlefont, zerolinecolor="fff", showgrid = FALSE, showticklabels = FALSE), 
+           paper_bgcolor = "#4e5d6c")
+}
+

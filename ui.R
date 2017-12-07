@@ -138,9 +138,14 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
 
   ),
   # Molly's
-  tabPanel("Tab Three"
-           
-  )
+  tabPanel("State Proportion", 
+           fluidRow(
+             column(width = 8,
+                    p(paste0("State shootings are mostly proportional to the population. At this point in time, it looks like Arizona is the biggest outlier."))),
+           mainPanel(
+             plotlyOutput("statePlot")
+           ))
+    )
   )
 )
 
