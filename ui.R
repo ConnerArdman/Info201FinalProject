@@ -114,7 +114,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                         p("In conclusion, these data clearly demonstrate that this is a major issue that needs to be addressed
                           on a federal level. Police (like all people) carry unconscious biases, and it is imperative to work
                           towards legislation that minimizes these."),
-                        style = "background-color:#4e5d6c; padding:10px" )
+                        style = "background-color:#4e5d6c; padding:10px")
                     ),
              column(width = 1)
            )
@@ -126,11 +126,12 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
     fluidRow(
       column(width = 1),
       column(width = 10, h1("Do police act differently when wearing body cameras?"),
-      p(paste0("Out of the ", total.shootings," U.S. police shootings, we decided to divide the shootings between those with
+      div(p(paste0("Out of the ", total.shootings," U.S. police shootings, we decided to divide the shootings between those with
        police body cameras and those without, to see if police act differently while wearing the cameras. The total number of
        recorded shootings with body cameras is ", total.bc.shootings ,", while total number of shootings where officers did not have
       body cameras is ", total.non.bc.shootings ,". After aggregating the data into these two categories, we decided to run the
-      numbers to see if officers with bodycams acted differently if a suspect wasn't fleeing or not armed."))),
+      numbers to see if officers with bodycams acted differently if a suspect wasn't fleeing or not armed.")), 
+      style = "background-color:#4e5d6c; padding:10px")),
       column(width = 1)),
     fluidRow(
       column(width = 1),
@@ -189,6 +190,18 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                     a("Studies suggest whether or not a police can turn off the camera effects how they act", href="https://news.vice.com/article/reports-suggest-body-cameras-are-only-effective-when-cops-cant-turn-them-off"),
                     p("Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings. And we hope that legistlators will act quickly to come to a solution in this matter.")
   ))),
+    fluidRow(align="center",
+      column(width = 1),br(),
+      column(width = 10,
+             div(h1("Conclusion:"),
+                 p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
+                   conclude that police officer's use of body cameras has little to no recognizable effect on the conditions
+                   a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
+                   such as frisks or traffic stops."),  
+                   style = "background-color:#4e5d6c; padding:10px")
+            )
+  ),
+
   
   # Footer
   br(),
