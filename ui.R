@@ -106,51 +106,51 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   # Pie charts that display the observed trends related to body cameras from the data.
   tabPanel("Do Body Camera's Prevent Shootings?",
     fluidRow(
-      column(width = 2),
-      column(width = 8, h1("Do police act differently when wearing body cameras?"),
+      column(width = 1),
+      column(width = 10, h1("Do police act differently when wearing body cameras?"),
       p(paste0("Out of the ", total.shootings," U.S. police shootings, we decided to divide the shootings between those with
        police body cameras and those without, to see if police act differently while wearing the cameras. The total number of
        recorded shootings with body cameras is ", total.bc.shootings ,", while total number of shootings where officers did not have
       body cameras is ", total.non.bc.shootings ,". After aggregating the data into these two categories, we decided to run the
       numbers to see if officers with bodycams acted differently if a suspect wasn't fleeing or not armed."))),
-      column(width = 2)),
+      column(width = 1)),
     fluidRow(
-      column(width = 3),
-      column(width = 6, h4("Suspects shot that weren't fleeing:")),
-      column(width = 3)
+      column(width = 1),
+      column(width = 10, h4("Suspects shot that weren't fleeing:")),
+      column(width = 1)
     ),
     fluidRow(
-      column(width = 2),
+      column(width = 1),
       column(
         h5("Police without body cameras"),
-        width = 4, plotlyOutput("FleePlotNoBC")),
+        width = 5, plotlyOutput("FleePlotNoBC")),
       column(
         h5("Police with body cameras"),
-        width = 4, plotlyOutput("FleePlotBC")),
-      column(width = 2)
+        width = 5, plotlyOutput("FleePlotBC")),
+      column(width = 1)
     ),
     fluidRow(
-      column(width = 3),
-      column(width = 6, h4("Unarmed suspects who were still shot:")),
-      column(width = 3)
+      column(width = 1),
+      column(width = 10, h4("Unarmed suspects who were still shot:")),
+      column(width = 1)
     ),
     fluidRow(
-      column(width = 2),
+      column(width = 1),
       column(
         h5("Police without body cameras"),
-        width = 4, plotlyOutput("armedPlotNoBC")),
+        width = 5, plotlyOutput("armedPlotNoBC")),
       column(
         h5("Police with body cameras"),
-        width = 4, plotlyOutput("armedPlotBC")),
-      column(width = 2)
+        width = 5, plotlyOutput("armedPlotBC")),
+      column(width = 1)
     ),
     fluidRow(
-      column(width = 2),
-      column(width = 8, h4("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
+      column(width = 1),
+      column(width = 10, h4("Conclusion"), p("When comparing the column on the left (no body cameras) to that of the right (body cameras) we can
         conclude that police officer's use of body cameras has little to no recognizable effect on the conditions
         a officer uses deadly force in. However, it is possible body cameras may have an effect on other officer interacitons
         such as frisks or traffic stops.")),
-      column(width = 2)
+      column(width = 1)
       )),
   
   # Footer

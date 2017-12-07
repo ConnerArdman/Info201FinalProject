@@ -24,10 +24,11 @@ showArmedPlotBC <- function() {
   unarmed.bc.true.graph <- plot_ly(bodycam.true, 
                                    labels = ~c("Unarmed", "Armed"), 
                                    values = ~c(unarmed.bc.true.perc, armed.bc.true.perc), 
-                                   type = 'pie') %>%
+                                   type = 'pie',
+                                   width = 400, height = 400) %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
            yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE), paper_bgcolor="#4e5d6c",
-           plot_bgcolor="#4e5d6c", autosize = F, width = 300, height = 300)
+           plot_bgcolor="#4e5d6c")
 }
 
 # Percentage of unarmed/armed suspects killed of officers WITHOUT body cameras.
@@ -39,19 +40,21 @@ armed.bc.false.perc <- round((nrow(bodycam.false) - nrow(unarmed.bc.false)) / nr
 unarmed.bc.false.graph <- plot_ly(bodycam.false, 
                                   labels = ~c("Unarmed", "Armed"), 
                                   values = ~c(unarmed.bc.false.perc, armed.bc.false.perc), 
-                                  type = 'pie') %>%
+                                  type = 'pie',
+                                  width = 400, height = 400) %>%
   layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
          yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),  paper_bgcolor="#4e5d6c",
-         plot_bgcolor="#4e5d6c", autosize = F, width = 300, height = 300)
+         plot_bgcolor="#4e5d6c")
 
 showArmedPlotNoBC <- function() {
   unarmed.bc.false.graph <- plot_ly(bodycam.false, 
                                     labels = ~c("Unarmed", "Armed"), 
                                     values = ~c(unarmed.bc.false.perc, armed.bc.false.perc), 
-                                    type = 'pie') %>%
+                                    type = 'pie',
+                                    width = 400, height = 400) %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
            yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),  paper_bgcolor="#4e5d6c",
-           plot_bgcolor="#4e5d6c", autosize = F, width = 300, height = 300)
+           plot_bgcolor="#4e5d6c")
 }
 
 
@@ -65,10 +68,11 @@ showFleePlotBC <- function() {
   flee.bc.true.plot <- plot_ly(bodycam.true, 
                                labels = ~c("Didn't Flee", "Fled"), 
                                values = ~c(not.flee.bc.true.perc, flee.bc.true.perc), 
-                               type = 'pie') %>%
+                               type = 'pie',
+                               width = 400, height = 400) %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
            yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),  paper_bgcolor="#4e5d6c",
-           plot_bgcolor="#4e5d6c", autosize = F, width = 300, height = 300)
+           plot_bgcolor="#4e5d6c")
 }
 
 # Percentage of flee/not flee suspects killed of officers WITHOUT body cameras.
@@ -81,8 +85,9 @@ showFleePlotNoBC <- function() {
   flee.bc.false.plot <- plot_ly(bodycam.false, 
                                 labels = ~c("Didn't Flee", "Fled"), 
                                 values = ~c(not.flee.bc.false.perc, flee.bc.false.perc), 
-                                type = 'pie') %>%
+                                type = 'pie',
+                                width = 400, height = 400) %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
            yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE), paper_bgcolor="#4e5d6c",
-           plot_bgcolor="#4e5d6c", autosize = F, width = 300, height = 300)
+           plot_bgcolor="#4e5d6c")
 }
