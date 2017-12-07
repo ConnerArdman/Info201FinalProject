@@ -43,3 +43,10 @@ Finally, we will utilize pie graphs to demonstrate the difference of behavior be
 The format of our final project is a **Shiny app**. We are reading in our police shootings data from a . **csv file**. The shooting data is updated extremely frequently so we refresh the data every time the page is loaded. The census data is not updated every day so we only read that in one time.
 
 To wrangle the data we needed to **reformat names** that are &quot;TK TK&quot; (this is a placeholder being using for unknown names). We also needed to **replace the race abbreviation** to the corresponding key value for example &quot;W&quot; is changed to &quot;White&quot;. We also needed to **find the corresponding** county for given the city name for our map.  Finally, we then needed to **join** this data together with the Census data.
+
+---
+## Conclusions
+
+Looking at our maps and the relatively linear pattern to the graph of proportions by state, we have concluded that this issue is spread significantly across all of the states (There are of course outliers such as New York and New Mexico with significantly higher of lower proportions than average). For this reason, we believe that the issue is most relevant at the federal legislative level.
+
+Overall, we have also found that this issue of police shootings is widespread amongst most of our factors. Additionally, we see no clear trend towards improving on this issue. There are however some very interesting data points. For example, police are significantly more likely to shoot a male than a female. Additionally, police are more likely to shoot someone who they claim was attacking them (however this could be due to the clear response bias associated with the officers not wanting to incriminate themselves. These data clearly demonstrate that this is a major issue that needs to be addressed on a federal level. Police (like all people) carry unconscious biases, and it is imperative to work towards legislation that minimizes these issues.

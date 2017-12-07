@@ -47,8 +47,9 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                br(),hr(),
                h1("Initial Conclusion:"),
                p("Looking at these maps and the relatively linear pattern to the graph, we have concluded
-                 that this issue is spread significantly across all of the states. For this reason, we believe
-                 that the issue is most relevant at the federal legislative level.")
+                 that this issue is spread significantly across all of the states (There are of course outliers
+                 such as New York and New Mexico with significantly higher of lower proportions than average).
+                 For this reason, we believe that the issue is most relevant at the federal legislative level.")
              ), 
              
              # Show a plot of the generated distribution
@@ -94,7 +95,6 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                            label = "Was the victim fleeing:",
                            choices = c("Any", "Yes, in a vehicle", "Yes, on foot", "No"),
                            selected= "Any")
-               
              ),
              
              mainPanel(
@@ -104,15 +104,18 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
            fluidRow(
              column(width = 1),
              column(width = 10,
-                    h2("Conclusion")
+                    div(h1("Conclusion:"),
+                        p("Overall, we have found that this issue of police shootings is widespread amongst most
+                          of our factors. Additionally, we see no clear trend towards improving on this issue. There
+                          are however some very interesting data points. For example, police are significantly more likely
+                          to shoot a male than a female. Additionally, police are more likely to shoot someone who they claim
+                          was attacking them (however this could be due to the clear response bias associated with the officers
+                          not wanting to incriminate themselves."),  
+                        p("In conclusion, these data clearly demonstrate that this is a major issue that needs to be addressed
+                          on a federal level. Police (like all people) carry unconscious biases, and it is imperative to work
+                          towards legislation that minimizes these."),
+                        style = "background-color:#4e5d6c; padding:10px" )
                     ),
-             column(width = 1)
-           ),
-           fluidRow(
-             column(width = 1),
-             column(width = 10,
-                    p("In conclusion, ")
-             ),
              column(width = 1)
            )
   ),
