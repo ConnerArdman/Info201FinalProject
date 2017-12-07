@@ -175,6 +175,7 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   
   tabPanel("Conclusion",
            fluidRow(
+             column(width = 1),
              column(width = 10, h1("What Does This Data Suggest For Federal Legislators?"),
                     p("Given that the Police Shooting issue is spread across all states, impacts every part of the population, and the initial solution 
                       of using body cameras on police officers has had little effect thus far, there remains to be a huge improvement.", style = "background-color:#4e5d6c; padding:10px"),
@@ -195,7 +196,9 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                       style = "background-color:#4e5d6c; padding:10px"),
                     
                     p("Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings, and we hope that legistlators will act quickly to come to a solution in this matter.", style = "background-color:#4e5d6c; padding:10px")
-                    ))),
+                    ),
+             column(width = 1)
+             )),
   
   # Footer
   br(),
