@@ -6,7 +6,7 @@ library(plotly)
 showCounty <- function(state, per) {
   state.lower <- tolower(state)
   city.counts <- raw.data %>% group_by(city, state) %>% 
-                 summarize(count = n())
+    summarize(count = n())
   
   city.lat.long <- read.csv('uscitiesv1.3.csv', stringsAsFactors = FALSE)
   
@@ -22,7 +22,7 @@ showCounty <- function(state, per) {
   counties <- map_data("county")
   
   county.data <- left_join(counties, county, by = c("subregion" = "lower_county_name", "region" = "state_name"))
-  title <- paste("Police Shootings Per 100,000 People By County:", state)
+  title <- paste("Police Shootings Per 100,000 People By County\n Since January 2015:", state)
   titlefont <- list(color = "white")
   county.data <- county.data  %>% filter(region == state.lower)
   
@@ -34,7 +34,7 @@ showCounty <- function(state, per) {
     county.data$colorcat <- factor(county.data$adjusted)
   } else {
     county.data$colorcat <- factor(county.data$count)
-    title <- paste("Police Shootings By County:", state)
+    title <- paste("Police Shootings By County\n Since January 2015:", state)
   }
   
   # Render the plot
@@ -52,8 +52,8 @@ showCounty <- function(state, per) {
                              round(adjusted)), hoverinfo = "text") %>%
     layout(autosize = F, title = title, paper_bgcolor = "#4e5d6c", titlefont = titlefont, 
            margin = list(t = "110"), xaxis = list(title = "", showgrid = FALSE,
-           zeroline = FALSE, showticklabels = FALSE), yaxis = list(title = "", showgrid = FALSE,
-           zeroline = FALSE, showticklabels = FALSE), showlegend = FALSE)
+                                                  zeroline = FALSE, showticklabels = FALSE), yaxis = list(title = "", showgrid = FALSE,
+                                                                                                          zeroline = FALSE, showticklabels = FALSE), showlegend = FALSE)
 }
 
 
@@ -78,6 +78,6 @@ showState <- function(mill) {
               color = interest, colors = 'Reds', hoverinfo = 'text') %>%
     colorbar(title = "Shootings", titlefont = titlefont, 
              tickfont = titlefont, tickcolor = "white") %>%
-    layout(title = 'Police Shootings Per Million People', geo = g, autosize = F,
+    layout(title = 'Police Shootings Per Million People\n Since January 2015', geo = g, autosize = F,
            paper_bgcolor = "#4e5d6c", titlefont = titlefont, margin = list(t = "110"))    
 }

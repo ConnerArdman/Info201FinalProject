@@ -42,13 +42,15 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
                p("The purpose of this project is to determine the scope of police shootings (an officer shooting a civilian)
                  in the United States, determine the effectiveness of current solutions (bodycameras), and hopefully
                  provide insight into how a better solution could be devised."), 
-               a("More information about this project and the dataset can be found here", href= "https://github.com/ConnerArdman/Info201FinalProject"),
+               a("More information about this project and the dataset can be found here. 
+                 Data ranges from January 1, 2015 to present day.", href= "https://github.com/ConnerArdman/Info201FinalProject"),
                br(),hr(),
                h1("Initial Conclusion:"),
                p("Looking at these maps and the relatively linear pattern to the graph, we have concluded
-                 that this issue is spread significantly across all of the states.")
+                 that this issue is spread significantly across all of the states. For this reason, we believe
+                 that the issue is most relevant at the federal legislative level.")
              ), 
-                  
+             
              # Show a plot of the generated distribution
              mainPanel(
                plotlyOutput("map", height = "500", width = "700"),
