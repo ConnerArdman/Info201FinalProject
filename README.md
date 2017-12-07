@@ -50,3 +50,16 @@ To wrangle the data we needed to **reformat names** that are &quot;TK TK&quot; (
 Looking at our maps and the relatively linear pattern to the graph of proportions by state, we have concluded that this issue is spread significantly across all of the states (There are of course outliers such as New York and New Mexico with significantly higher of lower proportions than average). For this reason, we believe that the issue is most relevant at the federal legislative level.
 
 Overall, we have also found that this issue of police shootings is widespread amongst most of our factors. Additionally, we see no clear trend towards improving on this issue. There are however some very interesting data points. For example, police are significantly more likely to shoot a male than a female. Additionally, police are more likely to shoot someone who they claim was attacking them (however this could be due to the clear response bias associated with the officers not wanting to incriminate themselves. These data clearly demonstrate that this is a major issue that needs to be addressed on a federal level. Police (like all people) carry unconscious biases, and it is imperative to work towards legislation that minimizes these issues.
+
+
+---
+## Proposed Solutions
+
+Given that the Police Shooting issue is spread across all states, impacts every part of the population, and the initial solution of using body cameras on police officers has had little effect thus far, there remains to be a huge improvement.
+
+When body cameras are used, the video recordings belong to the government, and they are kept private. Many of the high profile police shootings were high-profile because a bystander recorded the incident on their phone and posted it online. With body cameras, the recordings will never be viral, and the truth of the incident is kept behind red tape. We propose that body cameras continue to be used, but that the data be made public.
+
+For example, just today, a police officer was convicted for 20 years in jail for shooting an unarmed, fleeing, black male. There was a viral video in this case that demonstrates the police officer was acting out of line with the misbehavior of the victim. We need more videos like this, and more police officers to be punished based on body camera footage. 
+
+--
+Finally, we wanted to say that our thoughts are with the families of the victims of these police shootings, and we hope that legistlators will act quickly to come to a solution in this matter.
