@@ -1,3 +1,3 @@
-#map .geolayer rect, #map g.xy > rect.drag.nsewdrag.cursor-crosshair {
+#map .geolayer rect, #map g.xy > rect.drag.nsewdrag.cursor-crosshair,#statePlot .geolayer rect, #statePlot g.xy > rect.drag.nsewdrag.cursor-crosshair {
 	fill: #4e5d6c !important;
 }
