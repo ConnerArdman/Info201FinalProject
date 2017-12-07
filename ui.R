@@ -171,7 +171,8 @@ shinyUI(navbarPage("Police Shootings", theme = shinytheme("superhero"), selected
   # Footer
   br(),
   hr(),
-  p("Conner Ardman, Hari Kaushik, Tyler Van Brocklin, Molly Donohue")
+  p("Conner Ardman, Hari Kaushik, Tyler Van Brocklin, Molly Donohue"),
+  a("Raw Data From The Washington Post", href = "https://github.com/washingtonpost/data-police-shootings", style = "color:white")
   )
 )
 
