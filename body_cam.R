@@ -26,8 +26,7 @@ showArmedPlotBC <- function() {
                                    values = ~c(unarmed.bc.true.perc, armed.bc.true.perc), 
                                    type = 'pie') %>%
     layout(xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-           yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE), paper_bgcolor="#4e5d6c",
-           plot_bgcolor="#4e5d6c")
+           yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
 }
 
 # Percentage of unarmed/armed suspects killed of officers WITHOUT body cameras.
