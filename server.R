@@ -14,9 +14,9 @@ shinyServer(function(input, output) {
   output$map <- renderPlotly({
     
     if (input$county.or.state == "County") {
-      showCounty(input$state)
+      showCounty(input$state, input$per)
     } else if (input$county.or.state == "State") {
-      showState()
+      showState(input$mill)
     }
     
   })

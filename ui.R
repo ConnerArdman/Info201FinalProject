@@ -28,8 +28,12 @@ shinyUI(navbarPage("title here", theme = shinytheme("superhero"), selected = "Ma
                             choiceNames = c("United States", "Pick A State")),
                conditionalPanel(
                  condition = "input['county.or.state'] == 'County'",
-                 textInput("state", "State", "Washington")
-                 
+                 textInput("state", "State", "Washington"),
+                 checkboxInput("per", "Show Data Per 100,000 People", TRUE)
+               ),
+               conditionalPanel(
+                 condition = "input['county.or.state'] == 'State'",
+                 checkboxInput("mill", "Show Data Per 1,000,000 People", TRUE)
                )
              ),
              
